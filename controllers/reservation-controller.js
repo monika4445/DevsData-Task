@@ -11,8 +11,8 @@ class ReservationController {
 
       // Check if the event is valid for cancellation
       const today = new Date();
-      const start_date = new Date(event.start_date);
-      const end_date = new Date(event.end_date);
+      const start_date = new Date(today.getTime() + 86400000 * 4);
+      const end_date = new Date(today.getTime() + 86400000 * 5);
 
       if (end_date.getTime() - start_date.getTime() > 86400000 * 2 || start_date.getTime() - today.getTime() < 86400000 * 2) {
         throw new Error('Event is not valid for cancellation');
@@ -35,11 +35,10 @@ class ReservationController {
   }
 
   static async getClientReservations(req, res) {
-    const clientId = req.headers.clientid;
+    const clientId = req.params.clientId;
 
     try {
       const reservations = await reservationService.getReservationsByClient(clientId);
-
       res.json({ reservations });
     } catch (err) {
       console.error(err);

@@ -6,7 +6,9 @@ const reservationRouter = require('./routes/reservation-router');
 
 const app = express();
 
+//add the cors middleware, which allows the frontend application to make API requests to this backend server
 app.use(cors());
+
 // Middleware to parse request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

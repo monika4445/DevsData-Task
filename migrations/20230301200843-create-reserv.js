@@ -20,10 +20,6 @@ module.exports = {
       clientId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        // references: {
-        //   model: 'Clients',
-        //   key: 'id'
-        // }
       },
       reservationCode: {
         type: Sequelize.STRING,
