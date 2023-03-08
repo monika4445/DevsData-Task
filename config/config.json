@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "pswd",
-    "database": "merp",
+    "username": "---",
+    "password": "null",
+    "database": "---",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
